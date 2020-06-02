@@ -16,6 +16,10 @@ Examples:
 
     * Scan target using default 50 most common plugins:
         %(tool_name)s TARGET
+        
+    - python3 scanx.py -h
+    - python3 scanx.py -v TARGET 127.0.0.1
+    - python3 scanx.py -v TARGET www.nmap.org
     ''' % dict(tool_name="scanx")
 
     parser = argparse.ArgumentParser(description='%s security tool' % "ScanX".capitalize(), epilog=examples,
