@@ -63,7 +63,16 @@ def run(config):
         print('----------------------------------------------------')
         print('Host : %s (%s)' % (host, scanner[host].hostname()))
         print('State : %s' % scanner[host].state())
-
+        if scanner[host].has_tcp(22):
+            ssh22 = 'open'
+        else:
+            ssh22 = 'closed'
+        if scanner[host].has_tcp(23):
+            telnet = 'open'
+        else:
+            telnet = 'closed'
+        print('SSH 22 : %s' % ssh22)
+        print('TELNET : %s' % telnet)
         for proto in scanner[host].all_protocols():
             print('----------')
             print('Protocol : %s' % proto)
